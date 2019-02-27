@@ -29,11 +29,13 @@ todoApp.controller('TodoCtrl',['$scope', function($scope){
         }
     };
 
+    //method to delete task
     $scope.delTask = function () {
         for(var idx=0; idx < $scope.taskSet.length; idx++){
             if($scope.taskSet[idx].taskName.localeCompare($scope.taskName2)==0){
                 $scope.taskSet.splice(idx,1);
             }
         }
+        $scope.taskName2 = '';
     }
 }]);
