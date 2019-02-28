@@ -1,5 +1,3 @@
-
-
 function verifPseudo(champ)
 {
     
@@ -34,7 +32,7 @@ function verifAge(champ){
 
 function verifNom(champ){
 
-   var regex = /^[A-Z][a-z]{2,}/;
+   var regex = /^[A-Z][a-z]{2,}$/;
 
    if(!regex.test(champ.value))
    {
@@ -73,26 +71,26 @@ function verifMail(champ)
    }
 }
 
-function F(){
-    var i = document.getElementById("nom");
-    var k = document.getElementById("prenom");
-    var j = document.getElementById("email");
-    var l = document.getElementById("pseudo");
-    var m = document.getElementById("age");
-   i.addEventListener("input",F)
-   j.addEventListener("input",F)
-   k.addEventListener("input",F)
-   l.addEventListener("input",F)
-   m.addEventListener("input",F)
-    verifNom(i);
-    verifNom(k);
-    verifMail(j);
-    verifPseudo(l);
-    verifAge(m);
+function Fct(){
+   VerifGenerale();
+} 
+
+function VerifGenerale(){
+   var nom = document.getElementById("nom");
+   var prenom = document.getElementById("prenom");
+   var email = document.getElementById("email");
+   var pseudo = document.getElementById("pseudo");
+   var age = document.getElementById("age");
+   nom.addEventListener("input",VerifGenerale)
+   prenom.addEventListener("input",VerifGenerale)
+   email.addEventListener("input",VerifGenerale)
+   pseudo.addEventListener("input",VerifGenerale)
+   age.addEventListener("input",VerifGenerale)
+   verifNom(nom);
+   verifNom(prenom);
+   verifMail(email);
+   verifPseudo(pseudo);
+   verifAge(age);
 }
 
-document.addEventListener( "DOMContentLoaded", F);
-
-
-
-
+//document.addEventListener( "DOMContentLoaded", VerifGenerale);
